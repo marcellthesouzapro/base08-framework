@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_vite',
     'dashboard',
-    'auth', # NOVO: Adicione o aplicativo de autenticação
+    'supabase_auth',
 ]
 
 MIDDLEWARE = [
