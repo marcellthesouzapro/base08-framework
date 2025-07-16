@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+.coverage
+.tox/
+dist/
+build/
+*.so
+*.mo
+
+# Django
+*.log
+*.sqlite3
+media/
+staticfiles/
+.env
+
+# Node.js (Frontend)
+node_modules/
+dist/
+.vite/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.parcel-cache/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+*.swp
+
+# IDEs e Editores
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Outros
+*.bak
+*.tmp
+*~
