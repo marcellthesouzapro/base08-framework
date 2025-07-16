@@ -31,7 +31,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'base08.urls' # ATUALIZADO: Renomeado para base08.urls
+ROOT_URLCONF = 'base08.urls'
+WSGI_APPLICATION = 'base08.wsgi.application'
 
 TEMPLATES = [
     {
