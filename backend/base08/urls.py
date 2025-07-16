@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('dashboard/', include('dashboard.urls')),
-    path('', include('auth.urls')), # NOVO: A rota raiz agora aponta para as URLs do app 'auth'
+    path('', include('supabase_auth.urls')), # ATUALIZADO: Aponta para as URLs do app 'supabase_auth'
 ]
 
 if settings.DEBUG:

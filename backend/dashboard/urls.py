@@ -1,8 +1,14 @@
-from django.urls import path
-from . import views
-
-app_name = 'dashboard'
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', views.dashboard_view, name='main'),
+    path('admin/', admin.site.urls),
+    path('dashboard/', include('dashboard.urls')),
+    path('', include('supabase_auth.urls')), # ATUALIZADO: Aponta para as URLs do app 'supabase_auth'
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.DJANGO_VITE_ASSETS_URL, document_root=settings.DJANGO_VITE_ASSETS_PATH)

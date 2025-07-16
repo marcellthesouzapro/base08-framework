@@ -17,7 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_vite',
-    'core',
     'dashboard',
     'auth', # NOVO: Adicione o aplicativo de autenticação
 ]

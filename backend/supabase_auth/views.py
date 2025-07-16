@@ -11,4 +11,4 @@ def login_view(request):
         'SUPABASE_URL': settings.SUPABASE_URL,
         'SUPABASE_ANON_KEY': settings.SUPABASE_ANON_KEY,
     }
-    return render(request, 'auth/login.html', context)
+    return render(request, 'supabase_auth/login.html', context) # ATUALIZADO: Caminho do template

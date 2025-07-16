@@ -12,7 +12,7 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'frontend/src/main.jsx'),
+        main: path.resolve(__dirname, 'src/main.jsx'), // CORRIGIDO: Caminho de entrada do módulo
       },
     },
   },

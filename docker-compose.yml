@@ -3,13 +3,14 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: . # ATUALIZADO: Contexto de build é a raiz do projeto (base08/)
+      dockerfile: backend/Dockerfile # ATUALIZADO: Caminho do Dockerfile relativo ao contexto
     container_name: django_backend
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python /home/appuser/web/manage.py runserver 0.0.0.0:8000 # ATUALIZADO: Caminho completo para manage.py
     volumes:
-      - ./backend:/app/backend
-      - ./frontend/dist:/app/backend/frontend/dist
+      - ./backend:/home/appuser/web # ATUALIZADO: Monta o código do backend no WORKDIR do Dockerfile
+      - ./frontend/dist:/home/appuser/web/frontend/dist # ATUALIZADO: Monta assets compilados no WORKDIR do backend
+      - ./.env:/home/appuser/web/.env # NOVO: Monta explicitamente o .env dentro do WORKDIR do contêiner
     ports:
       - "8000:8000"
     env_file:
@@ -19,13 +20,13 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: . # ATUALIZADO: Contexto de build é a raiz do projeto (base08/)
+      dockerfile: frontend/Dockerfile # ATUALIZADO: Caminho do Dockerfile relativo ao contexto
     container_name: react_frontend
     command: npm run dev
     volumes:
-      - ./frontend:/app/frontend
-      - /app/frontend/node_modules
+      - ./frontend:/app/frontend # Monta o código do frontend
+      - /app/frontend/node_modules # Impede que node_modules seja sobrescrito pelo host
     ports:
       - "5173:5173"
     env_file:
